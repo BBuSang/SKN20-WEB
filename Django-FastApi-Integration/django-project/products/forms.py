@@ -12,3 +12,31 @@ class ProductForm(forms.Form):
     stock = forms.IntegerField(initial=0, label='재고수량',
                     widget=forms.NumberInput(attrs={'min':0,'placeholder':'재고수량을 입력하세요'}))
  
+ ######################################### 인증 #####################################
+class UserRegistationForm(forms.Form):
+    '''회원가입 폼'''
+    password = forms.CharField(label='비밀번호',
+                               widget=forms.PasswordInput(attrs={'placeholder':'비밀번호를 입력하세요'}))
+    password_confirm = forms.CharField(label='비밀번호 확인',
+                               widget=forms.PasswordInput(attrs={'placeholder':'비밀번호를 입력하세요'}))
+    username = forms.CharField(label='사용자명',
+                               widget=forms.TextInput(attrs={'placeholder':'사용자명을 입력하세요'}))
+    
+    email = forms.CharField(label='이메일',
+                               widget=forms.EmailInput(attrs={'placeholder':'이메일을 입력하세요'}))    
+    first_name = forms.CharField(label='이름',
+                               widget=forms.TextInput(attrs={'placeholder':'이름을 입력하세요'}))
+    last_name = forms.CharField(label='성',
+                               widget=forms.TextInput(attrs={'placeholder':'성을 입력하세요'}))
+    
+
+class UserLoginForm(forms.Form):
+    '''로그인 폼'''
+    username = forms.CharField(label='사용자명',
+                               widget=forms.TextInput(attrs={'placeholder':'사용자명을 입력하세요'}))
+    password = forms.CharField(label='비밀번호',
+                            widget=forms.PasswordInput(attrs={'placeholder':'비밀번호를 입력하세요'}))
+
+
+
+
